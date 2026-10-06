@@ -12,6 +12,8 @@ exports.createTrip = async (
   try {
     const {
       destination,
+      destinationType,
+      destinationContext,
       durationDays,
       budgetTier,
       interests
@@ -20,6 +22,8 @@ exports.createTrip = async (
     const aiResult =
       await generateTravelPlan({
         destination,
+        destinationType,
+        destinationContext,
         durationDays,
         budgetTier,
         interests
