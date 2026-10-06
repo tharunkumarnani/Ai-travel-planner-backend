@@ -50,6 +50,8 @@ async function fetchWithRetry(
 
 exports.generateTravelPlan = async ({
   destination,
+  destinationType,
+  destinationContext,
   durationDays,
   budgetTier,
   interests
@@ -58,6 +60,10 @@ exports.generateTravelPlan = async ({
 Create a ${durationDays} day travel itinerary.
 
 Destination: ${destination}
+Destination type: ${destinationType || "custom"}
+Destination context: ${destinationContext || "Not specified"}
+
+Important: If the destination is a state such as Karnataka, Kerala, Goa, Tamil Nadu, or Andhra Pradesh, treat it as the whole state and recommend suitable places across that state. If it is a city, focus on that city. If it is a country, cover suitable regions/cities in that country.
 
 Budget Tier: ${budgetTier}
 
