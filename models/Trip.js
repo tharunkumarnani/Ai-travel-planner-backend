@@ -38,6 +38,17 @@ const TripSchema = new mongoose.Schema(
       required: true
     },
 
+    destinationType: {
+      type: String,
+      enum: ["country", "state", "city", "custom"],
+      default: "custom"
+    },
+
+    destinationContext: {
+      type: String,
+      default: ""
+    },
+
     durationDays: {
       type: Number,
       required: true
